@@ -1,4 +1,3 @@
-#  from Live import load_game, welcome
 import Live
 import Utils
 import Score
