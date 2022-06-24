@@ -6,7 +6,6 @@ def clear_score():
         os.remove(Utils.SCORES_FILE_NAME)
 
 def add_score(score):
-    fname = Utils.SCORES_FILE_NAME
     try:
         f = open(fname, "r")
         cur_score = int(f.read())
@@ -15,8 +14,8 @@ def add_score(score):
         f = open(fname, "w")
         f.write(str(new_score))
         f.close()
-    except OSError:
-        print("Failed to open file")
+    except OSError as error:
+        print(error)
         f = open(fname, "w")
         f.write(str(score))
         f.close()
@@ -37,3 +36,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
