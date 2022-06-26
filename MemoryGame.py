@@ -1,5 +1,6 @@
 import random, time, os
 import tkinter as tk
+import Utils
 
 class MemoryGame:
     def __init__(self, difficulty):
@@ -30,7 +31,7 @@ class MemoryGame:
         print(self.GeneratedNumbers)
         time.sleep(1)
         self.ClearConsole()
-        '''
+        
         root = tk.Tk()
         w = 280 # width for the Tk root
         h = 50  # height for the Tk root
@@ -50,6 +51,10 @@ class MemoryGame:
         tk.Label(root, text=str(self.GeneratedNumbers)).pack()
         root.after(1000, lambda: root.destroy())  # time in ms
         root.mainloop()
+        '''
+        print(str(self.GeneratedNumbers))
+        time.sleep(1)
+        Utils.Screen_cleaner()
         self.get_list_from_user()
         if self.is_list_equal():
             #  Win
