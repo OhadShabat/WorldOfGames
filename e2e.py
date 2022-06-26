@@ -17,6 +17,4 @@ def main_function():
     else:
         exit(-1)
 
-
 main_function()
-
