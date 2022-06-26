@@ -3,7 +3,7 @@ import Utils
 import Score
 import MainScores
 
-# Score.clear_score()
+Score.clear_score()
 name = input("Please insert name:")
 Live.welcome(name)
 Utils.Screen_cleaner()

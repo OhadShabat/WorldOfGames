@@ -7,6 +7,7 @@ def clear_score():
 
 def add_score(score):
     try:
+        fname = Utils.SCORES_FILE_NAME
         f = open(fname, "r")
         cur_score = int(f.read())
         f.close()
