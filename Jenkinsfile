@@ -8,21 +8,25 @@ pipeline {
         }
         stage('Build') {
             steps {
-	        sh "docker-compose -f WorldOfGames"
+                sh "docker build -t worldofgames:latest"
             }  
         }
         stage('Run') {
             steps {
-                sh """cd WorldOfGames
-		       docker-compose up -d"""
+                sh "cd WorldOfGames"
+                sh "docker run -it worldofgames:latest"
             }
         }
         stage('Test') {
             steps {
-	        sh """cd WorldOfGames
-                       python -c "import e2e; e2e.main_function()"""
+                sh "cd WorldOfGames"
+                sh "python3 e2e.py"
+            }
+        }
+        stage('Finalize') {
+            steps {
+                sh "docker stop worldofgames:latest"
             }
         }
     }   
 }
-
